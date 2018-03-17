@@ -1,27 +1,27 @@
 $( document ).ready(function() {
     // An array of actions, new actions will be pushed into this array;
-    var candy = ["Skittles", "Gummy Bears", "Smarties", "Sour Patch Kids", "Starbust", "Air Heads", "Mike and Ikes", "Lemonheads", "Twizzlers", "Gummy Worms","Jolly Ranchers", "Snickers", "Dots"];
+    var topics = ["Skittles", "Gummy Bears", "Smarties", "Sour Patch Kids", "Starbust", "Air Heads", "Mike and Ikes", "Lemonheads", "Twizzlers", "Gummy Worms","Jolly Ranchers", "Snickers", "Dots"];
     // Creating Functions & Methods
     // Function that displays gif buttons
     function displayGifButtons(){
         $("#gifButtonsView").empty();
-        for (var i = 0; i < candy.length; i++){
+        for (var i = 0; i < topics.length; i++){
             var gifButton = $("<button>");
             gifButton.addClass("candy");
             gifButton.addClass("btn btn-primary")
-            gifButton.attr("data-name", candy [i]);
-            gifButton.text(candy [i]);
+            gifButton.attr("data-name", topics [i]);
+            gifButton.text(topics [i]);
             $("#gifButtonsView").append(gifButton);
         }
     }
        // Function to add a new candy button
        function addNewButton(){
         $("#addGif").on("click", function(){
-        var action = $("#candy-input").val().trim();
-        if (action == ""){
+        var candy = $("#candy-input").val().trim();
+        if (candy == ""){
           return false;
         }
-        actions.push(action);
+        topics.push(candy);
     
         displayGifButtons();
         return false;
@@ -30,13 +30,14 @@ $( document ).ready(function() {
 
     // Function that displays all of the gifs
     function displayGifs(){
-        var action = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + action + "";
+        var candy = $(this).attr("data-name");
+        var queryURL = "http://" + candy + "V00lp6evlnUIr8X0GVKqXTKTyvlGjQc3";
         console.log(queryURL); 
         $.ajax({
             url: queryURL,
             method: 'GET'
         })
+
         .done(function(response) {
             console.log(response); 
             $("#gifsView").empty(); 
@@ -63,11 +64,11 @@ $( document ).ready(function() {
             }
         });
     }
-    // Calling Functions & Methods
-    displayGifButtons(); // displays list of actions already created
+   
+    displayGifButtons(); 
     addNewButton();
     removeLastButton();
-    // Document Event Listeners
+   
     $(document).on("click", ".action", displayGifs);
     $(document).on("click", ".image", function(){
         var state = $(this).attr('data-state');
