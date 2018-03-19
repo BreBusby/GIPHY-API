@@ -1,0 +1,52 @@
+h1 {
+        padding: 20px 0;
+        margin: 0;
+        margin-bottom: 20px;
+        font-size: 50px;
+        color: rgb(255, 255, 255);
+        text-align: center;
+      }
+
+h2 {
+    padding: 20px 0;
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+  }
+  .btn {
+    background-color: rgb(166, 79, 252); 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+  .form-group {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    display: inline-block;
+  }
+
+
+  
+.jumbotron {
+    background-color: rgb(166, 79, 252);
+    background-size: cover;
+    text-align: center;   
+  }
+
+  body {
+    background-color: rgb(49, 212, 240);
+  }
+
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
